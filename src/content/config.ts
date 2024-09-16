@@ -1,9 +1,9 @@
 import { defineCollection, z } from "astro:content";
 
 export const newsSchema = z.object({
-  isDraft: z.boolean(),
+  isDraft: z.boolean().default(false),
   title: z.string(),
-  thumbnail: z.string(),
+  emoji: z.string(),
   publishDate: z.string()
 });
 
