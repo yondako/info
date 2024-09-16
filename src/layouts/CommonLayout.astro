@@ -24,15 +24,6 @@ const { title } = Astro.props;
     <Image class="mx-auto w-48 lg:mx-0 lg:w-52" src={logoImage} alt="yondako" />
     <slot />
     <footer class="mt-12 text-center text-xs">
-      <a
-        class="mx-auto mt-10 flex w-fit items-center space-x-1 rounded-full bg-accent px-5 py-3 text-center text-sm text-primary-background transition hover:brightness-95"
-        href="https://yondako.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span>yondakoを開く</span>
-        <Icon name="external-link" class="h-4 w-4" />
-      </a>
       <p class="mt-12 text-secondary-foreground">&copy; {new Date().getFullYear()} yondako</p>
     </footer>
   </body>
