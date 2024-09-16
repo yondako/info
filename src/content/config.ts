@@ -4,7 +4,12 @@ export const newsSchema = z.object({
   isDraft: z.boolean().default(false),
   title: z.string(),
   emoji: z.string(),
-  publishDate: z.string()
+  publishedAt: z.string()
+});
+
+export const docsSchema = z.object({
+  title: z.string(),
+  updatedAt: z.string()
 });
 
 const newsCollenction = defineCollection({
@@ -12,6 +17,12 @@ const newsCollenction = defineCollection({
   schema: newsSchema
 });
 
+const docsCollenction = defineCollection({
+  type: "content",
+  schema: docsSchema
+});
+
 export const collenctions = {
-  news: newsCollenction
+  news: newsCollenction,
+  docs: docsCollenction
 };
