@@ -1,0 +1,33 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import { z } from "astro:content";
+import { newsSchema } from "@/content/config";
+import { Icon } from "astro-icon/components";
+import CommonLayout from "./CommonLayout.astro";
+
+type Props = MarkdownLayoutProps<z.infer<typeof newsSchema>>;
+
+const { frontmatter } = Astro.props;
+
+// 2ケタになるようにゼロ埋め
+const padZero = (num: number) => num.toString().padStart(2, "0");
+
+// 公開日時
+const publishDate = new Date(frontmatter.publishDate);
+const dateText =
+  `${publishDate.getFullYear()}/${padZero(publishDate.getMonth() + 1)}/${padZero(publishDate.getDate())} ` +
+  `${padZero(publishDate.getHours())}:${padZero(publishDate.getMinutes())}`;
+---
+
+<CommonLayout title={frontmatter.title}>
+  <h1 class="mt-12 text-4xl font-bold">{frontmatter.title}</h1>
+  <p
+    class="mt-4 flex w-fit items-center space-x-2 rounded-full bg-accent bg-tertiary-background px-4 py-2 text-xs text-secondary-foreground"
+  >
+    <Icon name="calendar-stats" class="h-4 w-4" />
+    <span>{dateText}</span>
+  </p>
+  <article class="prose mt-12">
+    <slot />
+  </article>
+</CommonLayout>

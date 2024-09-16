@@ -1,0 +1,39 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import logoImage from "@/assets/logo.svg";
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | yondako</title>
+  </head>
+  <body
+    class="mx-auto max-w-xl bg-primary-background bg-gradation bg-[length:45vw] bg-[top_-10vw_right] bg-no-repeat px-6 py-12 text-primary-foreground md:bg-[length:30vw] md:bg-[top_-8vw_right] md:px-0"
+  >
+    <Image class="mx-auto w-48 lg:mx-0 lg:w-64" src={logoImage} alt="yondako" />
+    <slot />
+    <footer class="mt-12 text-center text-xs">
+      <a
+        class="mx-auto mt-10 flex w-fit items-center space-x-1 rounded-full bg-accent px-5 py-3 text-center text-sm text-primary-background transition hover:brightness-95"
+        href="https://yondako.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>yondakoを開く</span>
+        <Icon name="external-link" class="h-4 w-4" />
+      </a>
+      <p class="mt-12 text-secondary-foreground">&copy; {new Date().getFullYear()} yondako</p>
+    </footer>
+  </body>
+</html>
