@@ -13,19 +13,19 @@ const publishedAt = formatDate(Astro.props.publishedAt);
 ---
 
 <CommonLayout title={title}>
-  <p class="mt-12 text-5xl">{emoji}</p>
-  <h1 class="mt-6 text-4xl font-bold">{title}</h1>
+  <p class="mt-12 text-4xl md:text-5xl">{emoji}</p>
+  <h1 class="mt-4 text-2xl font-bold md:text-4xl">{title}</h1>
   <p
     class="mt-6 flex w-fit items-center space-x-2 rounded-full bg-accent bg-tertiary-background px-3 py-1 text-xs text-secondary-foreground"
   >
     <Icon name="calendar-stats" class="h-4 w-4" />
     <span>{publishedAt}</span>
   </p>
-  <article class="prose mt-12 max-w-none">
+  <article class="prose prose-stone mt-12 max-w-none">
     <slot />
   </article>
   <a
-    class="mx-auto mt-12 flex w-fit items-center space-x-1 rounded-full bg-accent px-5 py-3 text-center text-sm text-primary-background transition hover:brightness-95"
+    class="mx-auto mt-12 flex w-full items-center justify-center space-x-1 rounded-full bg-accent px-5 py-3 text-sm text-primary-background transition hover:brightness-95 md:w-52"
     href="https://yondako.com/"
     target="_blank"
     rel="noopener noreferrer"
