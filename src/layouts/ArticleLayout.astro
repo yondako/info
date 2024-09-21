@@ -1,5 +1,4 @@
 ---
-import type { MarkdownLayoutProps } from "astro";
 import { z } from "astro:content";
 import { newsSchema } from "@/content/config";
 import { Icon } from "astro-icon/components";
@@ -22,7 +21,7 @@ const publishedAt = formatDate(Astro.props.publishedAt);
     <Icon name="calendar-stats" class="h-4 w-4" />
     <span>{publishedAt}</span>
   </p>
-  <article class="prose mt-12">
+  <article class="prose mt-12 max-w-none">
     <slot />
   </article>
   <a
