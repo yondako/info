@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/ArticleLayout.astro
 isDraft: false
 title: お知らせを追加、ドキュメントを刷新しました
 emoji: 📰

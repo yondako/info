@@ -6,16 +6,16 @@ import { Icon } from "astro-icon/components";
 import CommonLayout from "./CommonLayout.astro";
 import { formatDate } from "@/lib/date";
 
-type Props = MarkdownLayoutProps<z.infer<typeof newsSchema>>;
+type Props = z.infer<typeof newsSchema>;
 
-const { frontmatter } = Astro.props;
+const { title, emoji } = Astro.props;
 
-const publishedAt = formatDate(frontmatter.publishedAt);
+const publishedAt = formatDate(Astro.props.publishedAt);
 ---
 
-<CommonLayout title={frontmatter.title}>
-  <p class="mt-12 text-5xl">{frontmatter.emoji}</p>
-  <h1 class="mt-6 text-4xl font-bold">{frontmatter.title}</h1>
+<CommonLayout title={title}>
+  <p class="mt-12 text-5xl">{emoji}</p>
+  <h1 class="mt-6 text-4xl font-bold">{title}</h1>
   <p
     class="mt-6 flex w-fit items-center space-x-2 rounded-full bg-accent bg-tertiary-background px-3 py-1 text-xs text-secondary-foreground"
   >
