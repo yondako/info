@@ -16,6 +16,7 @@ export const GET: APIRoute = async () => {
     slug,
     title: data.title,
     emoji: data.emoji,
+    tags: data.tags,
     publishedAt: data.publishedAt
   }));
 

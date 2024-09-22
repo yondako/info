@@ -4,6 +4,7 @@ export const newsSchema = z.object({
   isDraft: z.boolean().default(false),
   title: z.string(),
   emoji: z.string(),
+  tags: z.array(z.string()),
   publishedAt: z.string()
 });
 
