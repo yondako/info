@@ -12,10 +12,11 @@ export const GET: APIRoute = async () => {
   });
 
   // 直近24件に絞る
-  const recentNews = allNews.slice(0, 24).map(({ data }) => ({
+  const recentNews = allNews.slice(0, 24).map(({ slug, data }) => ({
+    slug,
     title: data.title,
     emoji: data.emoji,
-    publishDate: data.publishDate
+    publishedAt: data.publishedAt
   }));
 
   return new Response(JSON.stringify(recentNews));
