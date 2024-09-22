@@ -1,3 +1,4 @@
+import { formatDate } from "@/lib/date";
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 
@@ -17,7 +18,7 @@ export const GET: APIRoute = async () => {
     title: data.title,
     emoji: data.emoji,
     tags: data.tags,
-    publishedAt: data.publishedAt
+    publishedAt: formatDate(data.publishedAt)
   }));
 
   return new Response(JSON.stringify(recentNews));
