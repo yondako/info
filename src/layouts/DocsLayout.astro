@@ -1,18 +1,17 @@
 ---
-import type { MarkdownLayoutProps } from "astro";
 import { z } from "astro:content";
 import { docsSchema } from "@/content/config";
 import CommonLayout from "./CommonLayout.astro";
 import { formatDate } from "@/lib/date";
 
-type Props = MarkdownLayoutProps<z.infer<typeof docsSchema>>;
+type Props = z.infer<typeof docsSchema>;
 
-const { frontmatter } = Astro.props;
-const updatedAt = formatDate(frontmatter.updatedAt, true);
+const { title } = Astro.props;
+const updatedAt = formatDate(Astro.props.updatedAt, true);
 ---
 
-<CommonLayout title={frontmatter.title}>
-  <h1 class="mt-12 text-4xl font-bold">{frontmatter.title}</h1>
+<CommonLayout title={title}>
+  <h1 class="mt-12 text-4xl font-bold">{title}</h1>
   <p class="mt-6 text-sm">最終更新：{updatedAt}</p>
   <article class="prose prose-sm mt-12 max-w-none">
     <slot />

@@ -1,9 +1,9 @@
 ---
 import { getCollection, render } from "astro:content";
-import ArticleLayout from "@/layouts/ArticleLayout.astro";
+import DocsLayout from "@/layouts/DocsLayout.astro";
 
 export async function getStaticPaths() {
-  const newsPosts = await getCollection("news");
+  const newsPosts = await getCollection("docs");
 
   return newsPosts.map((post) => ({
     params: {
@@ -19,6 +19,6 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<ArticleLayout {...post.data}>
+<DocsLayout {...post.data}>
   <Content />
-</ArticleLayout>
+</DocsLayout>

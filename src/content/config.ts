@@ -1,3 +1,4 @@
+import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
 export const newsSchema = z.object({
@@ -5,25 +6,31 @@ export const newsSchema = z.object({
   title: z.string(),
   emoji: z.string(),
   tags: z.array(z.string()),
-  publishedAt: z.string()
+  publishedAt: z.date()
 });
 
 export const docsSchema = z.object({
   title: z.string(),
-  updatedAt: z.string()
+  updatedAt: z.date()
 });
 
-const newsCollenction = defineCollection({
-  type: "content",
+const news = defineCollection({
+  loader: glob({
+    pattern: "*.md",
+    base: "./src/data/news"
+  }),
   schema: newsSchema
 });
 
-const docsCollenction = defineCollection({
-  type: "content",
+const docs = defineCollection({
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/data/docs"
+  }),
   schema: docsSchema
 });
 
-export const collenctions = {
-  news: newsCollenction,
-  docs: docsCollenction
+export const collections = {
+  news,
+  docs
 };

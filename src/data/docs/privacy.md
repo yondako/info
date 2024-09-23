@@ -1,5 +1,4 @@
 ---
-layout: /src/layouts/DocsLayout.astro
 title: プライバシーポリシー
 updatedAt: 2024-07-31
 ---

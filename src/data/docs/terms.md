@@ -1,5 +1,4 @@
 ---
-layout: /src/layouts/DocsLayout.astro
 title: 利用規約
 updatedAt: 2024-07-31
 ---
