@@ -7,14 +7,14 @@ export const GET: APIRoute = async () => {
 
   // 最近公開された順にソート
   allNews.sort((a, b) => {
-    const dateA = new Date(a.data.publishDate).getTime();
-    const dateB = new Date(b.data.publishDate).getTime();
+    const dateA = a.data.publishedAt.getTime();
+    const dateB = b.data.publishedAt.getTime();
     return dateB - dateA;
   });
 
   // 直近24件に絞る
-  const recentNews = allNews.slice(0, 24).map(({ slug, data }) => ({
-    slug,
+  const recentNews = allNews.slice(0, 24).map(({ id, data }) => ({
+    slug: id,
     title: data.title,
     emoji: data.emoji,
     tags: data.tags,

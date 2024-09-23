@@ -5,8 +5,8 @@ export const GET: APIRoute = async () => {
   const allNews = await getCollection("news", ({ data }) => !data.isDraft);
 
   allNews.sort((a, b) => {
-    const dateA = new Date(a.data.publishDate).getTime();
-    const dateB = new Date(b.data.publishDate).getTime();
+    const dateA = a.data.publishedAt.getTime();
+    const dateB = b.data.publishedAt.getTime();
     return dateB - dateA;
   });
 

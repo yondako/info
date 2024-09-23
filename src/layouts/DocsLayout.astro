@@ -7,7 +7,7 @@ import { formatDate } from "@/lib/date";
 type Props = z.infer<typeof docsSchema>;
 
 const { title } = Astro.props;
-const updatedAt = formatDate(Astro.props.updatedAt, true);
+const updatedAt = formatDate(Astro.props.updatedAt);
 ---
 
 <CommonLayout title={title}>
