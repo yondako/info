@@ -7,20 +7,26 @@ import { formatDate } from "@/lib/date";
 
 type Props = z.infer<typeof newsSchema>;
 
-const { title, emoji } = Astro.props;
+const { title, emoji, tags } = Astro.props;
 
 const publishedAt = formatDate(Astro.props.publishedAt);
 ---
 
 <CommonLayout title={title}>
   <p class="mt-12 text-4xl md:text-5xl">{emoji}</p>
-  <h1 class="mt-4 text-2xl font-bold md:text-4xl">{title}</h1>
-  <p
-    class="mt-6 flex w-fit items-center space-x-2 rounded-full bg-accent bg-tertiary-background px-3 py-1 text-xs text-secondary-foreground"
-  >
-    <Icon name="calendar-stats" class="h-4 w-4" />
-    <span>{publishedAt}</span>
-  </p>
+  <h1 class="mt-6 text-2xl font-bold md:text-3xl">{title}</h1>
+  <div class="mt-3 flex items-center space-x-4">
+    <div class="flex items-center space-x-1">
+      {
+        tags.map((name) => (
+          <span class="block w-fit rounded-full bg-accent px-3 py-0.5 text-xs text-tertiary-background">
+            {name}
+          </span>
+        ))
+      }
+    </div>
+    <span class="text-sm text-secondary-foreground">{publishedAt}</span>
+  </div>
   <article class="prose prose-stone mt-12 max-w-none">
     <slot />
   </article>
