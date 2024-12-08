@@ -3,7 +3,7 @@ isDraft: false
 title: お知らせを追加、ドキュメントを刷新しました
 emoji: 📰
 tags: [アップデート情報]
-publishedAt: 2024-09-24
+publishedAt: 2024-09-24T00:00:00+09:00
 ---
 
 ## お知らせページを追加しました
