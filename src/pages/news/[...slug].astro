@@ -19,6 +19,6 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<ArticleLayout {...post.data}>
+<ArticleLayout slug={post.id} {...post.data}>
   <Content />
 </ArticleLayout>
