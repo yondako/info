@@ -6,7 +6,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "httpsL//info.yondako.com",
+  site: "https://info.yondako.com",
   integrations: [tailwind(), icon(), react()]
 });
 
