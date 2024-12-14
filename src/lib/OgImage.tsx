@@ -67,7 +67,6 @@ export async function getOgImage({ baseUrl, title, emoji }: GetOpImageOptions) {
       ],
       loadAdditionalAsset: async (code, segment) => {
         const svg = await loadEmoji(code, segment);
-        console.log(svg);
         return `data:image/svg+xml;base64,${btoa(svg)}`;
       }
     }
