@@ -6,14 +6,11 @@ tags: [アップデート情報]
 publishedAt: 2024-09-24T00:00:00+09:00
 ---
 
+import demoVideoUrl from "./assets/news.mp4?url";
+
 ## お知らせページを追加しました
 
-<!--
-TODO: Astro 5 beta で MDX プラグインが動かなかったので暫定的に /public に動画を置いてる
-MDX使えるようになったら、/publicに置くのやめてimportしたい
--->
-
-<video src="/videos/news.mp4" autoplay loop muted playsinline></video>
+<video src={demoVideoUrl} autoplay loop muted playsinline></video>
 
 yondako に関するお知らせや更新情報を掲載するページを追加しました。
 
@@ -21,7 +18,7 @@ yondako に関するお知らせや更新情報を掲載するページを追加
 
 ## ドキュメントを刷新しました
 
-![新しいドキュメントページのスクリーンショット](./docs.jpeg)
+![新しいドキュメントページのスクリーンショット](./assets/docs.jpeg)
 
 利用規約やプライバシーポリシーなどを今までは `docs.yondako.com` にまとめていましたが、`info.yondako.com/docs` に移動しました。
 

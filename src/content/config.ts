@@ -16,7 +16,7 @@ export const docsSchema = z.object({
 
 const news = defineCollection({
   loader: glob({
-    pattern: "**/*.md",
+    pattern: "**/*.{md,mdx}",
     base: "./src/data/news"
   }),
   schema: newsSchema
@@ -24,7 +24,7 @@ const news = defineCollection({
 
 const docs = defineCollection({
   loader: glob({
-    pattern: "**/*.md",
+    pattern: "**/*.{md,mdx}",
     base: "./src/data/docs"
   }),
   schema: docsSchema
