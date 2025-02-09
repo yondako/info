@@ -3,7 +3,7 @@ import { z } from "astro:content";
 import { newsSchema } from "@/content/config";
 import { formatDate } from "@/lib/date";
 
-type Props = z.infer<typeof newsSchema>;
+type Props = Omit<z.infer<typeof newsSchema>, "isDraft">;
 
 const { title, emoji, tags, publishedAt } = Astro.props;
 
