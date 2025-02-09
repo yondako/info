@@ -13,6 +13,7 @@
 }
 
 @layer components {
+
   /* 本文のスタイル */
   .article {
     h2 {
@@ -58,6 +59,7 @@
       max-height: 500px;
       margin: 1.5rem 0;
       background-color: var(--color-tertiary-background);
+      border: 2px solid var(--color-tertiary-border);
       border-radius: var(--radius-lg);
     }
 
