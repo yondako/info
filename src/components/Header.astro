@@ -1,0 +1,10 @@
+---
+import { Image } from "astro:assets";
+import logoLandscapeImage from "@/assets/logo/landscape.svg";
+import LinkButtonYondako from "@/components/LinkButtonYondako.astro";
+---
+
+<header class="flex items-center justify-between px-16 py-8">
+  <Image class="color-accent mx-auto w-40 md:mx-0 md:w-52" src={logoLandscapeImage} alt="yondako" />
+  <LinkButtonYondako class="px-8" />
+</header>

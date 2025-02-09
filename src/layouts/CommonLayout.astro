@@ -1,6 +1,7 @@
 ---
-import { Image } from "astro:assets";
-import logoImage from "@/assets/logo.svg";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import "../styles/global.css";
 
 type Props = {
   title: string;
@@ -31,13 +32,14 @@ const { title, description, ogImage } = Astro.props;
     <meta property="twitter:description" content={description} />
     {ogImage && <meta property="twitter:image" content={new URL(ogImage, Astro.url)} />}
   </head>
+  <Header />
   <body
-    class="mx-auto max-w-screen-md bg-primary-background bg-gradation bg-[length:45vw] bg-[top_-10vw_right] bg-no-repeat px-6 py-12 text-primary-foreground md:bg-[length:30vw] md:bg-[top_-8vw_right]"
+    class="bg-primary-background text-primary-foreground space-y-16 bg-[url('/gradation.webp')] bg-[length:45vw] bg-[top_-10vw_right] bg-no-repeat md:bg-[length:30vw] md:bg-[top_-8vw_right]"
   >
-    <Image class="mx-auto w-40 md:mx-0 md:w-52" src={logoImage} alt="yondako" />
-    <slot />
-    <footer class="mt-12 text-center text-xs">
-      <p class="mt-12 text-secondary-foreground">&copy; {new Date().getFullYear()} yondako</p>
-    </footer>
+    <main class="mx-auto max-w-screen-lg px-16">
+      <slot />
+    </main>
   </body>
+  <Footer />
+
 </html>

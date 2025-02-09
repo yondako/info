@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+
+type Props = {
+  class?: string;
+};
+---
+
+<a
+  class:list={[
+    "bg-primary-background text-accent border-accent flex items-center justify-center space-x-1 rounded-full border-2 px-5 py-3 text-sm transition hover:brightness-95",
+    Astro.props.class
+  ]}
+  href="https://yondako.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span>yondakoを開く</span>
+  <Icon name="external-link" class="h-4 w-4" />
+</a>
