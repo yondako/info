@@ -9,6 +9,6 @@ const { src, alt } = Astro.props;
 const imageUrl = typeof src === "string" ? src : src.src;
 ---
 
-<div class="bg-tertiary-background my-6 h-[500px] w-full rounded-lg">
+<div class="bg-tertiary-background my-6 max-h-[500px] w-full rounded-lg">
   <img src={imageUrl} alt={alt} class="mx-auto h-full" />
 </div>
