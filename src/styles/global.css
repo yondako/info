@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #a17171;
+  --color-primary-foreground: #494949;
+  --color-secondary-foreground: #9d9595;
+  --color-primary-background: #fffaf6;
+  --color-secondary-background: #faf9f9;
+  --color-tertiary-background: #fff3e9;
+  --color-primary-border: #494949;
+  --color-secondary-border: #dddddd;
+  --color-tertiary-border: #f0e1d5;
+}
+
+@layer components {
+
+  /* 本文のスタイル */
+  .article {
+    h2 {
+      margin: 4rem 0 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 2.5rem 0 1rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 1rem 0;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+      list-style-type: disc;
+    }
+
+    ol {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+      list-style-type: decimal;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    video {
+      width: 100%;
+      height: 500px;
+      margin: 1.5rem 0;
+      background-color: var(--color-tertiary-background);
+      border-radius: var(--radius-lg);
+    }
+
+    hr {
+      margin: 4rem 0;
+      border: none;
+      border-top: 1px solid transparent;
+      background: linear-gradient(to right, var(--color-accent) 50%, transparent 50%);
+      background-size: 16px 1px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    th,
+    td {
+      padding: 0.75rem;
+      border: 1px solid var(--color-secondary-border);
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--color-primary-background);
+      font-weight: 700;
+    }
+
+    tr:nth-child(even) {
+      background-color: var(--color-secondary-background);
+    }
+
+    /* lg未満の場合のスクロール対応 */
+    @media (max-width: 1023px) {
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+/* フォント */
+@font-face {
+  font-family: "LINE Seed JP";
+  src: url("/fonts/LINESeedJP_OTF_Rg.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LINE Seed JP";
+  src: url("/fonts/LINESeedJP_OTF_Bd.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+html {
+  font-family: "LINE Seed JP", sans-serif;
+}

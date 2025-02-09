@@ -1,0 +1,30 @@
+---
+import { z } from "astro:content";
+import { newsSchema } from "@/content/config";
+import { formatDate } from "@/lib/date";
+
+type Props = Omit<z.infer<typeof newsSchema>, "isDraft">;
+
+const { title, emoji, tags, publishedAt } = Astro.props;
+
+const publishedAtStr = formatDate(publishedAt);
+---
+
+<div class="space-y-3">
+  <div class="text-5xl">
+    {emoji}
+  </div>
+  <h1 class="text-2xl font-bold tracking-wide md:text-4xl">{title}</h1>
+  <div class="mt-3 flex items-center space-x-4">
+    <div class="flex items-center space-x-1">
+      {
+        tags.map((name) => (
+          <span class="bg-accent text-tertiary-background block w-fit rounded-full px-3 py-0.5 text-xs">
+            {name}
+          </span>
+        ))
+      }
+    </div>
+    <span class="text-secondary-foreground text-sm tracking-wider">{publishedAtStr}</span>
+  </div>
+</div>

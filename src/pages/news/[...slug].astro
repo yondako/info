@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import ArticleLayout from "@/layouts/ArticleLayout.astro";
+import Image from "@/components/Image.astro";
 
 export async function getStaticPaths() {
   const newsPosts = await getCollection("news");
@@ -17,8 +18,12 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const components = {
+  img: Image
+};
 ---
 
 <ArticleLayout slug={post.id} {...post.data}>
-  <Content />
+  <Content components={components} />
 </ArticleLayout>

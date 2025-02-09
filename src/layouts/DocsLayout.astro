@@ -2,12 +2,11 @@
 import { z } from "astro:content";
 import { docsSchema } from "@/content/config";
 import CommonLayout from "./CommonLayout.astro";
-import { formatDate } from "@/lib/date";
+import Title from "@/components/Title.astro";
 
 type Props = z.infer<typeof docsSchema>;
 
-const { title } = Astro.props;
-const updatedAt = formatDate(Astro.props.updatedAt);
+const { title, updatedAt } = Astro.props;
 ---
 
 <CommonLayout
@@ -15,9 +14,8 @@ const updatedAt = formatDate(Astro.props.updatedAt);
   description="読書記録サービス「yondako」に関するドキュメントページです"
   ogImage="/og.png"
 >
-  <h1 class="mt-12 text-4xl font-bold">{title}</h1>
-  <p class="mt-6 text-sm">最終更新：{updatedAt}</p>
-  <article class="prose prose-sm mt-12 max-w-none">
+  <Title emoji="📚" tags={["ドキュメント"]} publishedAt={updatedAt} title={title} />
+  <article class="article mt-20 max-w-none">
     <slot />
   </article>
 </CommonLayout>
