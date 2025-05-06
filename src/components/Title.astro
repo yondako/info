@@ -1,6 +1,6 @@
 ---
 import { z } from "astro:content";
-import { newsSchema } from "@/content/config";
+import { newsSchema } from "@/content.config";
 import { formatDate } from "@/lib/date";
 
 type Props = Omit<z.infer<typeof newsSchema>, "isDraft">;
