@@ -1,0 +1,38 @@
+---
+isDraft: false
+title: 読書ステータスの即時反映・取消しを実装しました
+emoji: 🔙
+tags: [アップデート情報]
+publishedAt: 2025-06-05T01:20:00+09:00
+---
+
+import reflectionDemoVideoUrl from "./assets/reflection.mp4?url";
+import undoDemoVideoUrl from "./assets/undo.mp4?url";
+import speedDemoVideoUrl from "./assets/speed.mp4?url";
+
+## 🏃 読書ステータスが即時反映されるようになりました
+
+<video src={reflectionDemoVideoUrl} autoplay loop muted playsinline></video>
+
+読書ステータスを変更したときに、すぐに表示に反映されるようになりました。  
+「あれ？さっき読んだのに、まだ読書中になってる…」にはもうなりません！
+
+
+## 🔙 ステータスの変更を取り消せるようになりました
+
+<video src={undoDemoVideoUrl} autoplay loop muted playsinline></video>
+
+ライブラリページでカードから読書ステータスを変更したときに、すぐに取り消せるようになりました。  
+今までは即時反映されなかったのでその場で変更できましたが、今回の改善でそれができなくなったため、取り消し機能を追加しました ✌️
+
+これはライブラリページかつ、モーダルが開いていない状態でのみ利用可能です。
+
+## 🐆 ライブラリページの表示がより高速になりました
+
+<video src={speedDemoVideoUrl} autoplay loop muted playsinline></video>
+
+必要なときにのみデータを取得・更新するようになったので、より速く表示できるようになりました。
+
+---
+
+地味なパワーアップを重ねる yondako をこれからもよろしくお願いします 💄
