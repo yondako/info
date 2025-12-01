@@ -30,7 +30,7 @@
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier-plugin-tailwindcss": "^0.7.0",
     "textlint": "^15.0.0",
     "textlint-rule-preset-jtf-style": "^3.0.2"
   }
