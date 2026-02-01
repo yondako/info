@@ -1,9 +1,9 @@
 ---
-title: 使用しているデータについて
-updatedAt: 2024-07-31
+title: データの取得元について
+updatedAt: 2026-02-01
 ---
 
-yondakoでは以下のデータソースから取得したデータを使用しています
+yondakoでは書籍および、書影画像を以下の機関・サービスから取得しています。
 
 ## 書籍データ
 
@@ -16,6 +16,10 @@ yondakoでは以下のデータソースから取得したデータを使用し�
 
 ## 書影データ
 
-| リポジトリ番号 | データソース                  | データプロバイダ     | データ提供機関               |
-| -------------- | ----------------------------- | -------------------- | ---------------------------- |
-| R100000137     | 国立国会図書館サーチの書影API | 出版情報登録センター | 出版情報登録センター（JPRO） |
+[楽天ウェブサービス: 楽天ブックス書籍検索API(version:2017-04-04)](https://webservice.rakuten.co.jp/documentation/books-book-search) を利用しています。
+
+<!-- Rakuten Web Services Attribution Snippet FROM HERE -->
+
+<a href="https://webservice.rakuten.co.jp/" target="_blank"><img src="https://webservice.rakuten.co.jp/img/credit/200709/credit_31130.gif" border="0" alt="Rakuten Web Service Center" title="Rakuten Web Service Center" width="311" height="30"/></a>
+
+<!-- Rakuten Web Services Attribution Snippet TO HERE -->
