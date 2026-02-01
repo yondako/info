@@ -33,7 +33,11 @@ export const GET: APIRoute = async (ctx) => {
     emoji: newsPost.data.emoji
   });
 
-  return new Response(ogImage, {
+  if (!ogImage) {
+    return new Response(null, { status: 500 });
+  }
+
+  return new Response(new Uint8Array(ogImage), {
     headers: {
       "Content-Type": "image/png"
     }
