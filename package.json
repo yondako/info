@@ -7,6 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "preview:cf": "wrangler dev",
+    "deploy": "astro build && wrangler deploy",
     "astro": "astro",
     "fmt": "prettier --write ."
   },
@@ -28,6 +30,7 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^6.0.0",
+    "wrangler": "^4",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
