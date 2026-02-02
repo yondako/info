@@ -15,6 +15,11 @@ export const GET: APIRoute = async () => {
   return new Response(
     JSON.stringify({
       timestamp: latestTimestamp
-    })
+    }),
+    {
+      headers: {
+        "Access-Control-Allow-Origin": "https://yondako.com"
+      }
+    }
   );
 };
