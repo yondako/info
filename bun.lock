@@ -5,7 +5,7 @@
     "": {
       "name": "nebulous-nadir",
       "dependencies": {
-        "@astrojs/check": "0.9.4",
+        "@astrojs/check": "0.9.6",
         "@astrojs/mdx": "^4.2.6",
         "@astrojs/react": "^4.2.7",
         "@resvg/resvg-js": "^2.6.2",
@@ -36,7 +36,7 @@
 
     "@antfu/utils": ["@antfu/utils@8.1.1", "", {}, "sha512-Mex9nXf9vR6AhcXmMrlz/HVgYYZpVGJ6YlPgwl7UnaFpnshXs6EK/oa5Gpf3CzENMjkvEx2tQtntGnb7UtSTOQ=="],
 
-    "@astrojs/check": ["@astrojs/check@0.9.4", "", { "dependencies": { "@astrojs/language-server": "^2.15.0", "chokidar": "^4.0.1", "kleur": "^4.1.5", "yargs": "^17.7.2" }, "peerDependencies": { "typescript": "^5.0.0" }, "bin": { "astro-check": "dist/bin.js" } }, "sha512-IOheHwCtpUfvogHHsvu0AbeRZEnjJg3MopdLddkJE70mULItS/Vh37BHcI00mcOJcH1vhD3odbpvWokpxam7xA=="],
+    "@astrojs/check": ["@astrojs/check@0.9.6", "", { "dependencies": { "@astrojs/language-server": "^2.16.1", "chokidar": "^4.0.1", "kleur": "^4.1.5", "yargs": "^17.7.2" }, "peerDependencies": { "typescript": "^5.0.0" }, "bin": { "astro-check": "bin/astro-check.js" } }, "sha512-jlaEu5SxvSgmfGIFfNgcn5/f+29H61NJzEMfAZ82Xopr4XBchXB1GVlcJsE+elUlsYSbXlptZLX+JMG3b/wZEA=="],
 
     "@astrojs/compiler": ["@astrojs/compiler@2.13.0", "", {}, "sha512-mqVORhUJViA28fwHYaWmsXSzLO9osbdZ5ImUfxBarqsYdMlPbqAqGJCxsNzvppp1BEzc1mJNjOVvQqeDN8Vspw=="],
 
