@@ -1,5 +1,6 @@
 import { glob } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { z } from "astro/zod";
+import { defineCollection } from "astro:content";
 
 export const newsSchema = z.object({
   isDraft: z.boolean().default(false),
@@ -9,10 +10,14 @@ export const newsSchema = z.object({
   publishedAt: z.date()
 });
 
+export type News = z.infer<typeof newsSchema>;
+
 export const docsSchema = z.object({
   title: z.string(),
   updatedAt: z.date()
 });
+
+export type Docs = z.infer<typeof docsSchema>;
 
 const news = defineCollection({
   loader: glob({

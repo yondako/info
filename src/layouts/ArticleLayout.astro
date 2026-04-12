@@ -1,12 +1,11 @@
 ---
-import { z } from "astro:content";
-import { newsSchema } from "@/content.config";
+import type { News } from "@/content.config";
 import CommonLayout from "./CommonLayout.astro";
 import Title from "@/components/Title.astro";
 
 type Props = {
   slug: string;
-} & z.infer<typeof newsSchema>;
+} & News;
 
 const { slug, ...props } = Astro.props;
 ---
