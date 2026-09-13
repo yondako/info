@@ -18,7 +18,7 @@ export const GET: APIRoute = async () => {
     }),
     {
       headers: {
-        "Access-Control-Allow-Origin": "https://yondako.com"
+        "Access-Control-Allow-Origin": "*"
       }
     }
   );
